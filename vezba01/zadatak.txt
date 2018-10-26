@@ -1,0 +1,34 @@
+Z1. Napraviti skener koji prepoznaje:
+
+a) cele brojeve: +45645  -4356  642642  +1 
+
+b) heksadecimalne brojeve: započinju cifrom 0, iza sledi malo ili veliko slovo 'x',
+   a zatim najmanje jedna, a najvi4e 4 heksadecimalne cifre.
+   0x7A3F  0X1234  0xf  0x123  0xffce
+
+c) realne brojeve (tacka i bar jedna cifra pre tacke su obavezni):
+   2.345  0.0  5.  123.456  +123.456  -123.456
+
+d) ključnu reč "break", ali case-insensitive
+   break
+   BrEaK
+
+
+Z2. Napraviti skener koji prepoznaje single-line komentar (//) i izbacuje ga iz koda.
+za domaci: resiti prepoznavanje blok komentara (pogledati i resenje u zbirci)
+
+
+Z23. Napraviti skener koji u ulaznom tekstu temperaturu izrazenu u Farenhajtima prepravlja 
+u temperaturu izrazenu u Celzijusima. Ostatak teksta treba da ostane isti.
+(°F  -  32)  x  5/9 = °C
+
+Na primer, tekst:
+Normalna temperatura ljudskog tela je 98F.
+Temperatura od 50F je daleko ispod proseka za mesec maj.
+Voda kljuca na 212F.
+
+treba da se prevede u:
+Normalna temperatura ljudskog tela je 36C.
+Temperatura od 10C je daleko ispod proseka za mesec maj.
+Voda kljuca na 100C.
+
