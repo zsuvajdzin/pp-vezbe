@@ -1,0 +1,4 @@
+//OPIS: jedna deklaracija sa tri promenljive
+int main() {
+    unsigned a,b,c;
+}
