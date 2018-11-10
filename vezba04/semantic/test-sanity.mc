@@ -1,4 +1,5 @@
-//OPIS: Sanity check za miniC gramatiku, return 50
+//OPIS: Sanity check za miniC gramatiku
+//RETURN: 50
 
 int f2() {
     return 2;

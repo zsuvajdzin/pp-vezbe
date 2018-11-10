@@ -12,6 +12,8 @@
 #   Početak naziva      Značenje
 #     test-sanity       korektan miniC program bez novih konstrukcija (provera originalne gramatike)
 #     test-ok           korektan miniC program sa novim konstrukcijama
+#                       ukoliko sadrži komentar "//RETURN: <num>", nakon generisanja koda će se proveriti
+#                       da li se povratna vrednost izgenerisanog koda poklapa sa navedenom
 #     test-semerr       nekorektan miniC program sa (jednom) semantičkom greškom
 #     test-synerr       nekorektan miniC program sa (jednom) sintaksnom greškom
 # Ukoliko se u test fajlu nalazi red koji počinje sa //OPIS:, ta linija će biti ispisana pre samog testiranja.
@@ -29,7 +31,7 @@ ifeq ($(SRC),micko)
 endif
 # da li je prisutan simulator?
 ifeq ($(wildcard ./hipsim),)
-    COMPILE_SIM = $(wildcard ./hipsim-src/Makefile)
+   COMPILE_SIM = $(wildcard ./hipsim-src/Makefile)
 else
     COMPILE_SIM =
 endif
@@ -43,7 +45,7 @@ COMPILER_CLEAN = lex.yy.c $(SRC).tab.c $(SRC).tab.h $(SRC).output $(SRC) *.?~ *.
 TEST = ""
 
 # pravila koja ne generišu nove fajlove
-.PHONY: clean test
+.PHONY: clean cleanall test archive
 
 # osnovno pravilo za prevođenje kompajlera
 $(SRC): $(COMPILER_DEPENDS)
@@ -76,9 +78,15 @@ clean:
 	@echo -e "\e[01;32mDeleting temporary files...\e[00m"
 	@rm -f $(COMPILER_CLEAN)
 
-archive: clean
+cleanall: clean
+	@rm -f hipsim
+	@if [ -f ./hipsim-src/Makefile ]; then \
+	    make --silent -C ./hipsim-src/ clean ; \
+	fi
+
+archive: cleanall
 	@arc=`pwd`; \
-	arc=`basename $$arc`; \
+	arc=`basename "$$arc"`; \
 	echo -e "\e[01;32mCreating archive ../$$arc.tar.gz\e[00m"; \
 	tar --exclude=*.gz -czf ../$$arc.tar.gz ../$$arc
 
@@ -100,6 +108,9 @@ test: $(SRC)
 		echo -e "\n\n------------------------\nTesting: $$test"; \
 		grep "//OPIS:" $$test; \
 		echo -e "------------------------\e[00m"; \
+		RETURN=$$(grep "//RETURN:" "$$test"); \
+		RETURN=$${RETURN#*:}; \
+		RETURN=$$(echo "$$RETURN" | xargs); \
 		./$(SRC) < "$$test"; \
 		out=$$?; \
 		if [ $$ttyp == "ok" ] && [ $$out -ne 0 ]; then \
@@ -124,6 +135,14 @@ test: $(SRC)
 						echo -e "\e[01;31m\nASM code differs from expected!"; \
 					fi; \
 					echo -e "Run\e[00m fldiff $${outname}.asm $${outname}.asm.ok"; \
+				fi; \
+			elif [ "$$RETURN" != "" ]; then \
+				echo -e "\e[01;34mRunning simulator...\e[00m"; \
+				RETVAL=$$(./hipsim -r -s 500 < "$${outname}.asm"); \
+				if [ "$$RETVAL" == "$$RETURN" ]; then \
+					echo -e -n "\e[01;32mReturn value: $$RETVAL\e[00m"; \
+				else \
+					echo -e -n "\e[01;31mReturn value: $$RETVAL\e[00m, should be $$RETURN."; \
 				fi; \
 			fi; \
 		fi; \
