@@ -1,5 +1,4 @@
-
-DODATNI ZADATAK Vezba 5
+Dodatni zadatak
 
 Proširiti miniC gramatiku višestrukim dodelama:
 

@@ -6,7 +6,7 @@
    i ispisati rezultat */
 int main() {
   int res;
-  res = abs();
+  res = abs(); // poziv funkcije
   printf("Apsolutna vrednost je %d", res);
 }
 
