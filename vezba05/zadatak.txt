@@ -25,7 +25,7 @@ Realizovati sledeće semantičke provere:
    jer se očekuje da funkcija vrati neku vrednost
 
     -----------------------------------------------
-                      |  void   |  int
+            tip f-je: |  void   |  int/unsigned
     -----------------------------------------------
       return exp ;    |  error  |  OK
     -----------------------------------------------
