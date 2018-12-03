@@ -1,10 +1,10 @@
-Dodatni zadatak za vezbu 4
+Dodatni zadatak 1
 
-Proširiti gramatiku if iskaza tako da se kao uslov mogu koristiti
+Proširiti mC gramatiku if iskaza tako da se kao uslov mogu koristiti
 logički izrazi (bez malih zagrada) kao u primeru:
     if (a < 3 && b < 4) ...
 Proširenje napraviti uvođenjem još jednog nivoa u izrazima (log_exp)
-koji se naslanja na relacioni izraz i dodaje operatore && i ||. 
+koji se naslanja na relacioni izraz i dodaje operatore && i ||.
 Nakon proširenja, gramatika za if_part treba da izgleda:
 
    if_part : _IF _LPAREN log_exp _RPAREN statement 
@@ -29,5 +29,4 @@ next i
 for j = 10 downto 0 step 2
     a = a - 1;
 next j
-
 

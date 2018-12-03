@@ -1,11 +1,11 @@
 Zadatak 1
 
-Proširiti miniC gramatiku tako da omogući 
+Proširiti miniC gramatiku tako da omogući
 definisanje lokalnih promenljivih unutar bloka
-i realizovati adekvatne semantičke provere:
+i realizovati sledeće semantičke provere:
 - lokalna promenljiva koja je definisana unutar bloka
   važi od momenta deklaracije do kraja tog bloka
-- ako postoje 2 promenljive koje se isto zovu 
+- ako postoje 2 promenljive koje se isto zovu
   a definisane su u 2 ugnježdena bloka, onda
   u unutrašnjem bloku važi unutrašnja promenljiva,
   a u spoljašnjem bloku spoljašnja promenljiva.
@@ -42,18 +42,18 @@ Primer:
   }
 
 
-POMOC:
+POMOĆ:
 - funkcija print_symtab() radi prikaz tabele simbola
 - polje atr2 za VAR je neiskorišćeno
 - funkcija clear_symbols(begin_index) radi 
   brisanje tabele simbola od elementa begin_index
-- funkcija get_last_element() vraća 
-  indeks poslednjeg popunjenog elementa iz tabele simbola
+- funkcija get_last_element() vraća indeks
+  poslednjeg popunjenog elementa iz tabele simbola
 
 
 Zadatak2
 
-Prosiriti miniC gramatiku for iskazom koji ima sledeći oblik:
+Proširiti miniC gramatiku for iskazom koji ima sledeći oblik:
 
   "for" "(" <type> <id1> "=" <lit> ";" <relation> ";" <id2> "++" ")"
      <stmt>
@@ -64,13 +64,13 @@ gde je
 <relation> relacioni izraz
 <stmt> statement
 
-Realizovati sledece semantičke provere:
+Realizovati sledeće semantičke provere:
 a) <id1> treba da bude lokalna promenljiva za for iskaz
-   (sledeci for iskaz može da definiše iterator sa istim imenom) 
+   (sledeći for iskaz može da definiše iterator sa istim imenom)
 b) tip literala <lit> treba da bude isti kao tip promenljive <id1>
 c) <id1> i <id2> treba da budu ista promenljiva 
 
-Obratiti pažnju na ugnježdene for iskaze.
+NAPOMENA: Ispravno tretirati ugnježdene for iskaze.
 
 Primer ispravnog for iskaza:
 

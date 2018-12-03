@@ -1,5 +1,4 @@
-
-Zadatak 4
+Dodatni zadatak
 
 Proširiti tekst gramatiku tako da se jedna ili više reči 
 može napisati u malim zagradama ( "(" i ")" ). 
