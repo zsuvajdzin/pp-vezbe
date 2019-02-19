@@ -13,8 +13,8 @@ int main() {
 //Funkcija koja racuna apsolutnu vrednost
 int abs(int broj) {
   if(broj < 0)
-    return 0 - broj;
+    return 0 - broj; //negativan broj
   else
-    return broj;
+    return broj;     //pozitivan broj
 }
 

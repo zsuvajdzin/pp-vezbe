@@ -14,8 +14,8 @@ c) realne brojeve (tačka i bar jedna cifra pre tačke su obavezni):
    Dodatno: realni brojevi su i brojevi oblika
    12.345e+123  5.e-4  -1.23E+04
    gde eksponencijalni deo može imati 1-3 cifre.
-   Realizovati u okviru istog regularnog izraza za realne brojeve. Ako eksponencijalni
-   deo realnog broja postoji, moraju postojati svi njegovi elementi.
+   Realizovati u okviru istog regularnog izraza za realne brojeve. 
+   Ako eksponencijalni deo realnog broja postoji, moraju postojati svi njegovi elementi.
 
 d) ključnu reč "break", ali case-insensitive
    break
@@ -25,7 +25,8 @@ d) ključnu reč "break", ali case-insensitive
 Zadatak 2
 
 Napraviti skener koji prepoznaje single-line komentar (//) i izbacuje ga iz koda.
-Za testiranje se može koristiti test2.c, izlaz treba da bude kao u test2.txt.
+Za testiranje se može koristiti test2.c, izlaz treba da bude početni kod, sa 
+izostavljenim linijama koje pocinju stringom "//".
 Za domaći: rešiti prepoznavanje blok komentara (pogledati i rešenje u zbirci)
 NAPOMENA: Za zadatak napraviti novi .l fajl
 
