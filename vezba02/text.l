@@ -7,9 +7,9 @@
 
 [ \t\n]+    { /* skip */ }
 
-"."         { return _DOT; }
-[A-Z][a-z]* { return _CAPITAL_WORD; }
-[a-z]+      { return _WORD; }
+"."         { return DOT; }
+[A-Z][a-z]* { return CAPITAL_WORD; }
+[a-z]+      { return WORD; }
                      
 .           { printf("\nline %d: LEXICAL ERROR on char %c", 
                       yylineno, *yytext); }    

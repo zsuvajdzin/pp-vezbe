@@ -1,4 +1,3 @@
-
 SRC = text
 .PHONY: clean
 

@@ -2,37 +2,38 @@
   #include <stdio.h>
   int yylex(void);
   int yyparse(void);
+  int yyerror(char *);
   extern int yylineno;
 %}
 
-%token  _DOT
-%token  _CAPITAL_WORD
-%token  _WORD
+%token  DOT
+%token  CAPITAL_WORD
+%token  WORD
 
 %%
 
 text 
-  : /* empty text */
+  : sentence
   | text sentence
   ;
           
 sentence 
-  : _CAPITAL_WORD words _DOT
+  : words DOT
   ;
 
 words 
-  : /* empty */
-  | words _WORD
-  | words _CAPITAL_WORD    
+  : CAPITAL_WORD
+  | words WORD
+  | words CAPITAL_WORD    
   ;
 
 %%
 
-main() {
+int main() {
   yyparse();
 }
 
-yyerror(char *s) {
+int yyerror(char *s) {
   fprintf(stderr, "line %d: SYNTAX ERROR %s\n", yylineno, s);
 } 
 
