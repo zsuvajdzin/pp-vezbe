@@ -5,14 +5,12 @@ može deklarisati više promenljivih odvojenih zarezom i
 realizovati semantičku proveru:
 1) promenljiva ne sme biti prethodno deklarisana.
 
-
 Zadatak 2
 
 Proširiti (samo) miniC izraze postinkrement operatorom.
 Realizovati semantičku proveru:
 1) postinkrement operator može da se primeni samo na
    promenljive i parametre (a ne, recimo, na funkcije).
-
 
 Zadatak 3
 
