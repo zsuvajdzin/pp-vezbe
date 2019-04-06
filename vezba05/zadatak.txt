@@ -6,7 +6,6 @@ ali ne i kao tip promenljive ili parametra (u tom slučaju
 treba prijaviti semantičku grešku). 
 Raditi sa tokenom _TYPE (slično kao int).
 
-
 Zadatak 2
 
 Proširiti miniC gramatiku novim return iskazom koji ima oblik:
