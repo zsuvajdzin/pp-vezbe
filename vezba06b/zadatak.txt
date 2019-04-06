@@ -1,5 +1,5 @@
-Prosiriti miniC gramatiku iskazom koji predstavlja definiciju ugnjezdene funkcije.
-Sintaksa ugnjezdene funkcije ima oblik:
+Proširiti miniC gramatiku iskazom koji predstavlja definiciju ugnježdene funkcije.
+Sintaksa ugnježdene funkcije ima oblik:
 
   "function" <ret_type> [ "(" <par_type> <par_id> ")"] <f_name> "->" <statement>
 
@@ -9,21 +9,21 @@ Sintaksa ugnjezdene funkcije ima oblik:
 <f_name>      ime funkcije
 <statement>   iskazi (statement)
 
-Funkcija moze a ne mora imati parametar.
+Funkcija može a ne mora imati parametar.
 Iza znaka "->" se navode iskazi koji predstavljaju telo funkcije.
 Ovakva funkcija nema lokalnih promenljivih.
-Ugnjezdena funkcija moze rekurzivno pozvati samu sebe. 
+Ugnježdena funkcija može rekurzivno pozvati samu sebe. 
 
-Definicija ugnjezdene funkcije je zaseban iskaz.
+Definicija ugnježdene funkcije je zaseban iskaz.
 
-Semantika ugnjezdene funkcije:
-Opseg vazenja ove funkcije je od mesta njene definicije pa do kraja miniC funkcije u kojoj je definisana
-  - ne moze se pozvati pre nego sto je definisana
-  - ne moze se pozvati izvan miniC funkcije u kojoj je definisana
-  - ne mogu se definisati 2 ugnjezdene funkcije sa istim imenom unutar jedne miniC funkcije 
-  - ugnjezdena funkcija i miniC funkcija ne mogu imati isto ime
-  - ugnjezdena funkcija moze da koristi (vidi) sve lokalne promenljive funkcije u kojoj je definisana.
-Ugnjezdena funkcija se poziva na isti nacin kao i miniC funkcija:
+Semantika ugnježdene funkcije:
+Opseg važenja ove funkcije je od mesta njene definicije pa do kraja miniC funkcije u kojoj je definisana
+  - ne može se pozvati pre nego što je definisana
+  - ne može se pozvati izvan miniC funkcije u kojoj je definisana
+  - ne mogu se definisati 2 ugnježdene funkcije sa istim imenom unutar jedne miniC funkcije 
+  - ugnježdena funkcija i miniC funkcija ne mogu imati isto ime
+  - ugnježdena funkcija može da koristi (vidi) sve lokalne promenljive funkcije u kojoj je definisana.
+Ugnježdena funkcija se poziva na isti način kao i miniC funkcija:
   inc(3)  //ime funkcije iza kog se u zagradama navodi argument (ukoliko postoji)
 
 Primeri testiranja:
@@ -32,6 +32,6 @@ function int (int x) inc -> x = x + 1;
 function unsigned (unsigned x) dup -> { return x + x; }
 
 Primeri testiranja:
-- testirati dve iste ugnjezdene funkcije definisane u dve razlicite miniC funkcije //OK
-- testirati dve iste ugnjezdene funkcije definisane u istoj miniC funkciji //semanticka greska
+- testirati dve iste ugnježdene funkcije definisane u dve različite miniC funkcije //OK
+- testirati dve iste ugnježdene funkcije definisane u istoj miniC funkciji //semantička greška
 
