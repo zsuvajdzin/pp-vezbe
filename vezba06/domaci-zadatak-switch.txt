@@ -34,3 +34,8 @@ Primer:
     default: x = 10;
   }
 
+  switch(state) { //bez default naredbe
+    case 1: x = 1; break;
+    case 2: { x = 5;} break;
+  }
+
