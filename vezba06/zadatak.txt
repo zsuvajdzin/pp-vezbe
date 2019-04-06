@@ -15,19 +15,15 @@ Primer:
   int main() {
     int x;
     int y;
-
     x = 2;
     y = 3;
-
     {
       int x;        // nova promenljiva x (lokalna za ovaj blok)
       x = 5;
-
       y = x + y;    // y = 8; 
                     // koristi se unutrašnja promenljiva x
                     // i spoljašnja promenljiva y
     }
-
     return x + y;   // 10 (spoljašnji x i y)
   }
 
