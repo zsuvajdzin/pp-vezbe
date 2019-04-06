@@ -10,7 +10,6 @@ Sintaksa 'do while' iskaza ima oblik:
 Pojam <statement> predstavlja jednu naredbu ili blok naredbi.
 Pojam <condition> predstavlja relacioni izraz.
 
-
 Zadatak 2
 
 Deklaracija miniC promenljive omogućuje deklaraciju
