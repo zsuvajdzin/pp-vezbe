@@ -29,8 +29,6 @@ ime, pa se u tabeli simbola moraju razlikovati.
 
 
 
-
-
 Zadatak 2
 
 Napraviti generisanje koda za postinkrement iskaz.
