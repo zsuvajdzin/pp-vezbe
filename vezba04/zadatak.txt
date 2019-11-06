@@ -2,8 +2,9 @@ Zadatak 1
 
 Proširiti miniC gramatiku tako da se u jednoj deklaraciji
 može deklarisati više promenljivih odvojenih zarezom i
-realizovati semantičku proveru:
-1) promenljiva ne sme biti prethodno deklarisana.
+realizovati semantičke provere:
+1) promenljiva ne sme biti prethodno deklarisana,
+2) lokalni identifikatori moraju biti jednoznačni.
 
 Zadatak 2
 
