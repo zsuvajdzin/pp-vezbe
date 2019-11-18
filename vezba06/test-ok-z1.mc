@@ -1,38 +1,28 @@
 //OPIS: dva ugnjezdena bloka
-//RETURN: 106
-//veliki primer, bilo bi zgodno podeliti ga na vise sitnijih
+//RETURN: 26
 
 int main() {
-    int x;
-    int y;
-    int b;
-    unsigned c;
+  int x;
+  int y;
 
-    x = 2;
-    y = 3;
-    b = 7;
-    c = 5u;
+  x = 2;
+  y = 3;
+  {
+    int x;
+    int a;
+    x = 5;
+    a = 11;
+    y = -42;
     {
       int x;
       int a;
-      int c;
-      x = 5;
-      a = 11;
-      b = 4;
-      c = -42;
-      {
-        int x;
-        int a;
-        unsigned c;
-        x = 42;
-        a = 15;
-        b = 19;
-        x = x + a + b;
-        y = x + a - b;
-        c = 10u;
-      }
-      y = x + y - a + b;
+      x = 42;
+      a = 15;
+      x = x + a + y;
+      y = x + a;
     }
-    return x + y + b;
+    y = x + y - a;
   }
+  return x + y;
+}
 
